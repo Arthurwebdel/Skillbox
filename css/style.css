@@ -1,0 +1,372 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto-regular'),
+    url('../fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/Roboto-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto-Bold'),
+    url('../fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/Roboto-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --white-color: #fff;
+  --main-color: #666;
+  --accent-color: #3F2AFF;
+  --title-color: #2E2B44;
+}
+
+.page {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 16px;
+  color: var(--main-color);
+  background-color: var(--white-color);
+}
+
+.flex {
+  display: flex;
+}
+
+.list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 20px;
+  font-weight: 700;
+  background-color: var(--accent-color);
+  padding: 24px 74px;
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: normal;
+  outline: none;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.btn:hover:not(:focus-visible) {
+  background-color: #5e73ec;
+}
+
+.btn:active:not(:focus-visible) {
+  box-shadow: inset 19px 18px 31px -18px rgba(0, 0, 0, 0.75);
+  background-color: var(--accent-color);
+}
+
+.title {
+  margin: 0;
+  color: var(--title-color);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 28px;
+}
+
+.header {
+  padding: 26px 0;
+  background-color: var(--accent-color);
+}
+
+.header__content {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__list {
+  gap: 56px;
+}
+
+.nav__link {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  line-height: normal;
+  color: var(--white-color);
+  outline: none;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--white-color);
+  bottom: -3px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav__link:focus-visible {
+  outline: 1px solid var(--white-color);
+  outline-offset: 2px;
+}
+
+.nav__link:hover::after {
+  opacity: 1;
+}
+
+.nav__link:active:not(:focus-visible)::after {
+  opacity: 0;
+}
+
+.hero {
+  position: relative;
+  padding: 10px 0;
+  background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
+
+}
+
+.hero__content {
+  padding-top: 119px;
+  padding-bottom: 115px;
+}
+
+.hero__title {
+  margin: 0;
+  margin-bottom: 30px;
+  color: var(--white-color);
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.hero__text {
+  margin: 0;
+  font-size: 18px;
+  color: var(--white-color);
+  margin-bottom: 62px;
+  line-height: 150%;
+}
+
+.hero__img {
+  object-fit: fill;
+}
+
+.advantages {
+  padding-top: 80px;
+  padding-bottom: 82px;
+}
+
+.advantages__top {
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.advantages__text {
+  margin: 0;
+}
+
+.advantages__title {
+  max-width: 380px;
+  margin-bottom: 17px;
+}
+
+.advantages__item {
+  gap: 30px;
+  align-items: center;
+}
+
+.advantages__descr {
+  margin: 0;
+  line-height: 120%;
+}
+
+.teachers {
+  background-color: #212133;
+  padding-top: 70px;
+  padding-bottom: 71px;
+}
+
+.teachers__title {
+  color: var(--white-color);
+}
+
+.teachers__img {
+  border-radius: 22px 22px 0px 0px;
+  margin-bottom: 22px;
+}
+
+.teachers__subtitle {
+  margin: 0;
+  margin-bottom: 11px;
+  font-size: 18px;
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.teachers__text {
+  margin: 0;
+  color: #85859B;
+}
+
+.course {
+  padding-top: 74px;
+  padding-bottom: 80px;
+}
+
+.course__items:not(:last-child) {
+  margin-bottom: 27px;
+}
+
+.course__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  height: auto;
+  position: relative;
+  line-height: 0;
+}
+
+.course__img {
+  object-fit: cover;
+}
+
+.course__wrapper {
+  padding: 28px 28px 31px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #EDF0F9;
+}
+
+.course__time {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  line-height: normal;
+  color: var(--white-color);
+}
+
+.course__time::before {
+  content: '';
+  display: flex;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background-image: url('../img/time_ico.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.course__subtitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #212133;
+  margin-bottom: 10px;
+  line-height: 150%;
+}
+
+.course__text {
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 150%;
+}
+
+.course__btn {
+  margin-top: auto;
+  padding: 20px 59px;
+  font-size: 16px;
+}
+
+.footer {
+  overflow-x: hidden;
+}
+
+.footer__top {
+  padding-top: 28px;
+  padding-bottom: 23px;
+  background-color: #2E2B44;
+}
+
+.social {
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.social__link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.social__link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.social__link:hover:not(:focus-visible) .social__ico {
+  fill: var(--accent-color);
+}
+
+.social__link:active:not(:focus-visible) .social__ico{
+  fill: var(--white-color);
+}
+
+.social__ico {
+  fill: var(--white-color);
+  transition: fill 0.3s ease-in-out;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.footer__copy {
+  color: #3F2AFF;
+}
